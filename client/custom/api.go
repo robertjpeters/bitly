@@ -35,7 +35,7 @@ type Bitlink struct {
 	ID             string      `json:"id"`
 	LongURL        string      `json:"long_url"`
 	Title          string      `json:"title"`
-	Archived       string      `json:"archived"`
+	Archived       bool        `json:"archived"`
 	CreatedAt      string      `json:"created_at"`
 	CreatedBy      string      `json:"created_by"`
 	ClientID       string      `json:"client_id"`
