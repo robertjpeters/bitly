@@ -1,6 +1,7 @@
 package client
 
 import (
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -55,5 +56,16 @@ func (c *Client) Call(urlSuffix string, httpMethod string, payload []byte) ([]by
 	}
 
 	defer res.Body.Close()
+
+	{
+		if res.StatusCode >= 300 {
+			body, err := ioutil.ReadAll(res.Body)
+			if err != nil {
+				return nil, err
+			}
+			return nil, errors.New(string(body))
+		}
+	}
+
 	return ioutil.ReadAll(res.Body)
 }
