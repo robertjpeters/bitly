@@ -55,7 +55,7 @@ type BitlinkHistory struct {
 	Created      string `json:"created"`
 	FirstCreated string `json:"first_created"`
 	Deactivated  string `json:"deactivated"`
-	IsActive     string `json:"is_active"`
+	IsActive     bool   `json:"is_active"`
 }
 
 func (r *CustomBitlinkRequest) marshal() ([]byte, error) {
