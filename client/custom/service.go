@@ -37,7 +37,7 @@ func (b *CustomBitlinks) CreateCustomBitlink(bitlink *CustomBitlinkRequest) (Cus
 	return unmarshalCustomBitlink(data)
 }
 
-func (b *CustomBitlinks) UpdateCreateCustomBitlink(bitlink string, update *UpdateCustomBitlinkRequest) (CustomBitlink, error) {
+func (b *CustomBitlinks) UpdateCustomBitlink(bitlink string, update *UpdateCustomBitlinkRequest) (CustomBitlink, error) {
 	payload, err := update.marshal()
 	if err != nil {
 		return CustomBitlink{}, err
